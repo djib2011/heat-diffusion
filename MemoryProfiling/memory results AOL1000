@@ -1,0 +1,83 @@
+Filename: ConstructSparseGraph.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    28   25.102 MiB    0.000 MiB   @profile
+    29                             def constructGraph(dset):
+    30   25.105 MiB    0.004 MiB       time1 = time.time()
+    31   25.105 MiB    0.000 MiB       with warnings.catch_warnings(): # giati ta scipy.sparse vgazoun DeprecationWarning
+    32   25.105 MiB    0.000 MiB           warnings.simplefilter("ignore")
+    33   25.105 MiB    0.000 MiB           with open(dset, 'rb') as tempFile: # diavazei to arxeio
+    34   25.105 MiB    0.000 MiB               reader = csv.reader(tempFile)
+    35   25.105 MiB    0.000 MiB               q = []
+    36   25.105 MiB    0.000 MiB               l = []
+    37   25.285 MiB    0.180 MiB               for row in reader:
+    38   25.285 MiB    0.000 MiB                   if (row[0] != '') and (row[1] != ''): # xwrizei tis dyo sthles tou arxeiou se dyo listes
+    39   25.285 MiB    0.000 MiB                       q.append(row[0])
+    40   25.285 MiB    0.000 MiB                       l.append(row[1])
+    41   25.281 MiB   -0.004 MiB           time2 = time.time()
+    42   25.285 MiB    0.004 MiB           print( 'Read Time: %s seconds' %(time2 - time1) )
+    43                                     # Lists with unique values:
+    44   25.285 MiB    0.000 MiB           uq=uniqueValues(q) # dhmiourgei listes me monadika stoixeia
+    45   25.285 MiB    0.000 MiB           ul=uniqueValues(l)
+    46   25.285 MiB    0.000 MiB           time3 = time.time()
+    47   25.285 MiB    0.000 MiB           print( 'Find Unique Values: %s seconds' %(time3 - time2) )
+    48                                     # n=number of unique queries, p=number of unique url:
+    49   25.285 MiB    0.000 MiB           n=len(uq)
+    50   25.285 MiB    0.000 MiB           p=len(ul)
+    51                                     # Map nodes to queries/url:
+    52                                     global Q 
+    53   25.434 MiB    0.148 MiB           Q = mapper(uq) # dhmiourgei ordered dictionaries pou antistoixizoun queries me nodes
+    54                                     global L
+    55   25.586 MiB    0.152 MiB           L = mapper(ul)
+    56   25.590 MiB    0.004 MiB           del uq, ul # ypotithetai oti ta eleytherwnei ap th mnhmh, den kserw ti paizei me to garbage collector
+    57   25.590 MiB    0.000 MiB           time4 = time.time()
+    58   25.590 MiB    0.000 MiB           print( 'Mapping Time: %s seconds' %(time4 - time3) )
+    59                                     # Accumulative graph:
+    60   25.652 MiB    0.062 MiB           E = lil_matrix((n,p)) # Arxikopoiei ton pinaka E. Ftiaxnoume lil_matrix giati einai pio grhgoroi sthn dhmiourgia.
+    61   25.777 MiB    0.125 MiB           for i in xrange(len(q)):
+    62   25.777 MiB    0.000 MiB               E[Q.get(q[i])-1,L.get(l[i])-1] +=1 # Dhmioyrgeitai pinakas me antitoixies query-url pou metraei ton arithmo tous. Oi grammes antistoixoun se queries oi sthles se url kai oi times sto plithos twn forwn poy clickare kapoios url me vash to sygkekrimeno query.
+    63   25.777 MiB    0.000 MiB           del q, l
+    64   25.777 MiB    0.000 MiB           time5 = time.time()
+    65   25.777 MiB    0.000 MiB           print( 'Construct Accumulative Matrix: %s seconds' %(time5 - time4) )
+    66   25.969 MiB    0.191 MiB           sumQ = np.asarray(E.sum(axis = 1)) # sumQ einai to athroisma twn grammwn. deixnei to degree tou kathe query node
+    67   26.285 MiB    0.316 MiB           sumL = np.asarray(E.sum(axis = 0)) # sumL einai to athroisma twn stilwn. deixnei to degree tou kathe url node
+    68   26.285 MiB    0.000 MiB           time6 = time.time()
+    69   26.285 MiB    0.000 MiB           print( 'Find Node Degrees Time: %s seconds' %(time6 - time5) )
+    70   26.285 MiB    0.000 MiB           print( 'Total Time: %s seconds' %(time6 - time1) )
+    71   26.344 MiB    0.059 MiB           G = lil_matrix((n+p,n+p)) # Adjacency matrix. Einai tetragwnos pinakas megethous (n+p)x(n+p) opou oi prwtes n grammes/sthles einai ta queries kai oi epomenes p grammes/sthles einai ta url. Logw tou grafou pou exoume o panw aristera ypopinakas nxn kai o katw deksia apo n+1 ews n+p, einai adeioi (afou den syndeontai q me q kai l me l ston grafo mas)
+    72   26.402 MiB    0.059 MiB           T = lil_matrix((n,p)) # Einai o katw aristera ypopinakas tou G anastramenos
+    73   26.402 MiB    0.000 MiB           print( 'Query Weight Association:' )
+    74   26.410 MiB    0.008 MiB           G = G.todense() # kanei POLYYYY pio grhgora tis prakseis
+    75   28.410 MiB    2.000 MiB           T = T.todense()
+    76   32.172 MiB    3.762 MiB           for i in xrange(n):
+    77   32.172 MiB    0.000 MiB               for j in xrange(p):
+    78   32.176 MiB    0.004 MiB                   G[i,j+n] = E[i,j] / int(sumQ[i]) # ypologizei ta varh twn query outlinks
+    79   32.172 MiB   -0.004 MiB               if i in range(n//10,n,n//10): # typwnei to progress
+    80   32.172 MiB    0.000 MiB                   print( '%i Percent: %s seconds' %( (i*100//n) + 1, time.time() - time6) )     
+    81   32.172 MiB    0.000 MiB           time7 = time.time()
+    82   32.172 MiB    0.000 MiB           print( 'Total Query Weight Association Time: %s seconds' %(time7 - time6))
+    83   32.172 MiB    0.000 MiB           print( 'URL Weight Association:' )
+    84   32.207 MiB    0.035 MiB           for i in xrange(n):
+    85   32.207 MiB    0.000 MiB               for j in xrange(p):
+    86   32.207 MiB    0.000 MiB                   T[i,j] = E[i,j] / sumL.item(j) # ypologizei ta varh twn url outlinks
+    87   32.207 MiB    0.000 MiB               if i in range(n//10,n,n//10): #typwnei to progress
+    88   32.199 MiB   -0.008 MiB                   print( '%i Percent: %s seconds' %( (i*100//n) + 1, time.time() - time7) ) 
+    89   32.207 MiB    0.008 MiB           time8 = time.time()
+    90   32.207 MiB    0.000 MiB           print( 'Total URL Weight Association Time: %s seconds' %(time8 - time7))
+    91   32.207 MiB    0.000 MiB           del E
+    92   32.207 MiB    0.000 MiB           T = T.transpose() # anastrefei ton pinaka T
+    93   32.207 MiB    0.000 MiB           time9 = time.time()
+    94   32.207 MiB    0.000 MiB           print( 'Transpose Time: %s seconds' %(time9 - time8))
+    95   32.207 MiB    0.000 MiB           print( 'Matrix Join:' )
+    96   37.645 MiB    5.438 MiB           for i in xrange(p):
+    97   37.645 MiB    0.000 MiB               for j in xrange(n):
+    98   37.645 MiB    0.000 MiB                   G[i+n,j] = T[i,j] # enwnei tous dyo pinakes
+    99   37.645 MiB    0.000 MiB               if i in range(p//10,p,p//10): # progress
+   100   37.641 MiB   -0.004 MiB                   print( '%i Percent: %s seconds' %( (i*100//p) + 1, time.time() - time9) )    
+   101   35.414 MiB   -2.227 MiB           del T
+   102   35.414 MiB    0.000 MiB           time10 = time.time()
+   103   35.414 MiB    0.000 MiB           print( 'Total Matrix Join Time: %s seconds' %(time10 - time9))
+   104                                     #G = lil_matrix(G) # gia na pianei ligotero xwro
+   105   35.414 MiB    0.000 MiB           return G
+

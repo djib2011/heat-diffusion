@@ -1,0 +1,52 @@
+Filename: ConstructSparseGraph.py
+
+Read Time: 2.2854988575 seconds
+Find Unique Values: 96.7593791485 seconds
+Mapping Time: 0.0917088985443 seconds
+Construct Accumulative Matrix: 5.60479593277 seconds
+Find Node Degrees Time: 0.126461029053 seconds
+Total Time: 104.867843866 seconds
+Query Weight Association:
+10 Percent: 591.59169507 seconds
+20 Percent: 1180.18555999 seconds
+30 Percent: 1768.97851515 seconds
+40 Percent: 2352.29132915 seconds
+50 Percent: 2932.93145609 seconds
+60 Percent: 3515.8326211 seconds
+70 Percent: 4103.50528812 seconds
+80 Percent: 4683.55910015 seconds
+90 Percent: 5264.62757897 seconds
+100 Percent: 5847.13282299 seconds
+Total Query Weight Association Time: 5851.28536701 seconds
+URL Weight Association:
+10 Percent: 571.289807081 seconds
+20 Percent: 1140.26876998 seconds
+30 Percent: 1708.19965911 seconds
+40 Percent: 2276.77639198 seconds
+50 Percent: 2844.33885407 seconds
+60 Percent: 3419.573035 seconds
+70 Percent: 3995.40698695 seconds
+80 Percent: 4571.02578902 seconds
+90 Percent: 5138.75785899 seconds
+100 Percent: 5704.84843707 seconds
+Total URL Weight Association Time: 5708.78290796 seconds
+Transpose Time: 0.000728130340576 seconds
+Matrix Join:
+10 Percent: 392.337801933 seconds
+20 Percent: 788.520699978 seconds
+30 Percent: 1193.84602499 seconds
+40 Percent: 1598.73678589 seconds
+50 Percent: 1995.13126397 seconds
+60 Percent: 2393.20430803 seconds
+70 Percent: 2785.52802491 seconds
+80 Percent: 3172.19772696 seconds
+90 Percent: 3558.45304704 seconds
+100 Percent: 3944.62583709 seconds
+Total Matrix Join Time: 3948.0391829 seconds
+Done!
+Matrix Sum : 13773.0
+Graph Size : (13773 x 13773)
+Graph Memory Size: 144 bytes
+--- 17403.0737491 seconds ---
+
+
