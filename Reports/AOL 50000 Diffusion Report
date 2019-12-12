@@ -1,0 +1,16 @@
+Graph Load Time: 0.708323955536 seconds
+Exponential Preparation Time: 0.0684809684753 seconds
+Calculating Matrix Exponential:
+Total Terms : 6
+16 Percent: 0.0029878616333 seconds
+33 Percent: 0.0202419757843 seconds
+50 Percent: 0.0843458175659 seconds
+66 Percent: 0.366874933243 seconds
+83 Percent: 1.63629794121 seconds
+Total Matrix Exponential Time: 1.66594815254 seconds
+Done!
+Matrix Sum : 43019.0
+Diffused Graph Size : (43019 x 43019)
+Diffused Graph Memory Size: 64 bytes
+--- 15.1390919685 seconds ---
+

@@ -1,0 +1,15 @@
+Elements Loaded: 3.17291402817 seconds
+Heat Propagation Time: 11.445070982 seconds
+Finding Top 5 Nodes:
+20 Percent: 0.302703857422 seconds
+40 Percent: 0.602011919022 seconds
+60 Percent: 0.905729055405 seconds
+80 Percent: 1.20786499977 seconds
+100 Percent: 1.50787901878 seconds
+Total Ranking Time: 1.50789403915 seconds
+['lucchese boots', 'rhinestone western hats', 'kids harley davidson brake light boots', 'cowboy boots', 'converse cheap']
+['http://www.nextag.com', 'http://www.sheplers.com', 'http://www.bootcity.com', 'http://www.lucchese.com', 'http://www.bootbarn.com']
+[[83.15972222222224], [3.9062500000000004], [2.6041666666666674], [2.604166666666667], [0.26041666666666713]]
+[[24.48207732123488], [22.86508094581782], [22.76847619587948], [22.25410934363528], [0.7256277846467044]]
+--- 16.2353138924 seconds ---
+

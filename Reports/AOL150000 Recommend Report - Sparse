@@ -1,0 +1,14 @@
+Elements Loaded: 164.620779991 seconds
+Heat Propagation Time: 56.542568922 seconds
+Finding Top 5 Nodes:
+20 Percent: 0.796347141266 seconds
+40 Percent: 1.58288908005 seconds
+60 Percent: 2.36585593224 seconds
+80 Percent: 3.14787101746 seconds
+100 Percent: 3.92842102051 seconds
+Total Ranking Time: 3.92844104767 seconds
+['lucchese boots', 'western apparel', 'cowboy hat rack', 'sheplers', 'cowboy boots']
+['http://www.bizrate.com', 'http://www.bootbarn.com', 'http://www.westernwarehouse.com', 'http://www.spiritharley.com', 'http://www.crybabyranch.com']
+[[87.56356469576644], [1.5150916498402869], [1.1654210471473336], [1.1468750042900913], [0.9323811262666197]]
+[[-0.16316342192725955], [-0.11904761904761904], [-0.10416666666666666], [-0.09259259259259257], [-0.08680555555555554]]
+--- 225.510658026 seconds ---

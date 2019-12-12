@@ -1,0 +1,49 @@
+Read Time: 0.0340969562531 seconds
+Find Unique Values: 21.391302824 seconds
+Mapping Time: 0.0407872200012 seconds
+Construct Accumulative Matrix: 2.14120793343 seconds
+Find Node Degrees Time: 0.0546300411224 seconds
+Total Time: 23.6620249748 seconds
+Query Weight Association:
+10 Percent: 1909.34753585 seconds
+20 Percent: 3811.55034781 seconds
+30 Percent: 5716.31506181 seconds
+40 Percent: 7621.75180888 seconds
+50 Percent: 9525.13267398 seconds
+60 Percent: 11424.784452 seconds
+70 Percent: 13320.801384 seconds
+80 Percent: 15217.1940269 seconds
+90 Percent: 17115.1170809 seconds
+100 Percent: 19014.309494 seconds
+Total Query Weight Association Time: 19020.436187 seconds
+URL Weight Association:
+10 Percent: 1873.77377486 seconds
+20 Percent: 3745.71011686 seconds
+30 Percent: 5618.57970691 seconds
+40 Percent: 7485.98986387 seconds
+50 Percent: 9334.29924893 seconds
+60 Percent: 11183.5405698 seconds
+70 Percent: 13032.140682 seconds
+80 Percent: 14881.3565199 seconds
+90 Percent: 16730.3927629 seconds
+100 Percent: 18578.5252578 seconds
+Total URL Weight Association Time: 18584.5420799 seconds
+Transpose Time: 0.0643539428711 seconds
+Matrix Join:
+10 Percent: 1855.24101305 seconds
+20 Percent: 3707.33029199 seconds
+30 Percent: 5560.66195512 seconds
+40 Percent: 7412.6362021 seconds
+50 Percent: 9264.55438209 seconds
+60 Percent: 11117.8151259 seconds
+70 Percent: 12972.8407309 seconds
+80 Percent: 14825.605216 seconds
+90 Percent: 16678.773787 seconds
+100 Percent: 18532.2379961 seconds
+Total Matrix Join Time: 18533.0026581 seconds
+Done!
+Matrix Sum : 43019.0
+Graph Size : (43019 x 43019)
+Graph Memory Size: 64 bytes
+--- 56163.2240369 seconds ---
+

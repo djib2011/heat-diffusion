@@ -1,0 +1,31 @@
+Query Map Load Time: 31.2976191044 seconds
+URL Map Load Time: 11.669978857 seconds
+Reading CSV File
+Read Time: 7.66004610062 seconds
+Populating Accumulative Matrix
+5 Percent: 44.1443340778 seconds
+10 Percent: 78.4166340828 seconds
+15 Percent: 112.531656027 seconds
+20 Percent: 146.571917057 seconds
+25 Percent: 180.2330091 seconds
+30 Percent: 213.963301897 seconds
+35 Percent: 247.661242962 seconds
+40 Percent: 281.500734091 seconds
+45 Percent: 315.769567966 seconds
+50 Percent: 349.939067125 seconds
+55 Percent: 384.048949957 seconds
+60 Percent: 418.083802938 seconds
+65 Percent: 452.012823105 seconds
+70 Percent: 486.51414609 seconds
+75 Percent: 521.269336939 seconds
+80 Percent: 555.408421993 seconds
+85 Percent: 589.423979998 seconds
+90 Percent: 623.422287941 seconds
+95 Percent: 657.315885067 seconds
+Accumulative Matrix Time: 692.100042105 seconds
+Saving Accumulative Matrix
+Done!
+Matrix Sum : 15150004.0
+Matrix Size : (1389102 x 1389102)
+--- 9354.12664413 seconds ---
+

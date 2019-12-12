@@ -1,0 +1,14 @@
+Elements Loaded: 0.311483860016 seconds
+Heat Propagation Time: 2.23066091537 seconds
+Finding Top 5 Nodes:
+20 Percent: 0.0986580848694 seconds
+40 Percent: 0.197808027267 seconds
+60 Percent: 0.296622037888 seconds
+80 Percent: 0.395260095596 seconds
+100 Percent: 0.493932008743 seconds
+Total Ranking Time: 0.493946075439 seconds
+['lucchese boots', 'cowboy boots', 'rhinestone western hats', 'converse cheap', 'full size headboards']
+['http://www.nextag.com', 'http://www.sheplers.com', 'http://www.bootcity.com', 'http://www.lucchese.com', 'http://www.bootbarn.com']
+[[84.74702380952382], [3.9062500000000004], [3.9062500000000004], [1.116071428571429], [0.744047619047619]]
+[[24.85450874362379], [23.12417271262137], [22.86982990406937], [22.50501880105674], [1.0944333090379006]]
+--- 3.06229376793 seconds ---
